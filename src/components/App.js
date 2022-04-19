@@ -3,6 +3,7 @@ import reducer, {initialState} from './../reducers'
 import './App.css';
 import {
   addOne,
+  applyNumber,
 } from './../actions'
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
@@ -34,21 +35,21 @@ const [state, dispatch] = useReducer(reducer, initialState)
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={evt => dispatch(addOne(1))}/>
-              <CalcButton value={2} />
-              <CalcButton value={3} />
+              <CalcButton value={1} onClick={evt => dispatch(applyNumber(1))}/>
+              <CalcButton value={2} onClick={evt => dispatch(applyNumber(2))}/>
+              <CalcButton value={3} onClick={evt => dispatch(applyNumber(3))}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={evt => dispatch(applyNumber(4))}/>
+              <CalcButton value={5} onClick={evt => dispatch(applyNumber(5))}/>
+              <CalcButton value={6} onClick={evt => dispatch(applyNumber(6))}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={evt => dispatch(applyNumber(7))}/>
+              <CalcButton value={8} onClick={evt => dispatch(applyNumber(8))}/>
+              <CalcButton value={9} onClick={evt => dispatch(applyNumber(9))}/>
             </div>
 
             <div className="row">

@@ -5,7 +5,8 @@ import {
   applyNumber,
   changeOperation,
   clearDisplay,
-
+  setMemory,
+  clearMemory,
 } from './../actions'
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
@@ -31,9 +32,9 @@ const [state, dispatch] = useReducer(reducer, initialState)
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"M+"} onClick={evt => dispatch(setMemory())}/>
+              <CalcButton value={"MR"} onClick={evt => dispatch(applyNumber(state.memory))}/>
+              <CalcButton value={"MC"} onClick={evt => dispatch(clearMemory())}/>
             </div>
 
             <div className="row">
